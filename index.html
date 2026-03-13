@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ultraviolet Proxy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="/uv/uv.bundle.js"></script>
+<script src="/uv/uv.config.js"></script>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+}
+
+input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Ultraviolet Proxy</h1>
+
+<input id="url" placeholder="Enter URL">
+<button onclick="go()">Go</button>
+
+<script>
+function go() {
+    const url = document.getElementById("url").value;
+    window.location.href = "/uv/" + __uv$config.encodeUrl(url);
+}
+</script>
+
+</body>
+</html>
