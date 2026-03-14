@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Ultraviolet Proxy</title>
+<title>Viola Proxy</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="/uv/uv.bundle.js"></script>
-<script src="/uv/uv.config.js"></script>
+<script src="/viola/viola.bundle.js"></script>
+<script src="/viola/viola.config.js"></script>
 
 <style>
 body {
@@ -32,7 +32,7 @@ button {
 
 <body>
 
-<h1>Ultraviolet Proxy</h1>
+<h1>Viola Proxy</h1>
 
 <input id="url" placeholder="Enter URL">
 <button onclick="go()">Go</button>
@@ -40,7 +40,7 @@ button {
 <script>
 function go() {
     const url = document.getElementById("url").value;
-    window.location.href = "/uv/" + __uv$config.encodeUrl(url);
+    window.location.href = "/viola/" + __viola$config.encodeUrl(url);
 }
 </script>
 
