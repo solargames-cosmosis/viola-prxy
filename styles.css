@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "VIRGO 01";
+    src: url("/VIRGO01.ttf") format("truetype");
+}
+
+body {
+    background: #050510;
+    color: #00eaff;
+    font-family: "VIRGO 01", sans-serif;
+    text-align: center;
+    margin-top: 15vh;
+}
+
+h1 {
+    font-size: 60px;
+    letter-spacing: 4px;
+    text-shadow: 0 0 20px #00eaff;
+}
+
+input {
+    width: 400px;
+    padding: 14px;
+    background: #0a0a18;
+    border: 1px solid #00eaff;
+    color: white;
+    font-size: 16px;
+}
+
+button {
+    padding: 14px 20px;
+    background: #00eaff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00c8d8;
+}
