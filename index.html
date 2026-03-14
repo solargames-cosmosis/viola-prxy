@@ -9,12 +9,15 @@
 
 <body>
 
-    <img src="viola-pfp.jpg" alt="Viola Logo" class="logo">
-    
-<h1>VIOLA</h1>
+<div class="top">
+    <img src="/viola-logo.jpg" class="logo" alt="Viola Logo">
+    <h1>VIOLA</h1>
+</div>
 
-<input id="url" placeholder="Enter URL">
-<button onclick="go()">Launch</button>
+<div class="bottom">
+    <input id="url" placeholder="Enter URL">
+    <button onclick="go()">Go</button>
+</div>
 
 <script>
 function go() {
@@ -24,8 +27,7 @@ function go() {
         url = "https://" + url;
     }
 
-    const encoded = btoa(url);
-    window.location = "/browser?url=" + encoded;
+    window.location = "/browser?url=" + btoa(url);
 }
 </script>
 
