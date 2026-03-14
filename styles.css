@@ -4,36 +4,67 @@
 }
 
 body {
-    background: #050510;
-    color: #00eaff;
+    margin: 0;
     font-family: "VIRGO 01", sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
-    margin-top: 15vh;
+    color: white;
+
+    /* Animated background */
+    background: linear-gradient(-45deg, #6D28D9, #00EAFF, #1e1b4b, #7C3AED);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.top {
+    margin-top: 40px;
+}
+
+.logo {
+    width: 120px;
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.4));
 }
 
 h1 {
-    font-size: 60px;
+    margin: 10px 0;
+    font-size: 48px;
     letter-spacing: 4px;
-    text-shadow: 0 0 20px #00eaff;
+}
+
+.bottom {
+    padding: 30px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
 }
 
 input {
-    width: 400px;
+    width: 60%;
+    max-width: 500px;
     padding: 14px;
-    background: #0a0a18;
-    border: 1px solid #00eaff;
-    color: white;
+    border: none;
+    border-radius: 6px;
     font-size: 16px;
 }
 
 button {
     padding: 14px 20px;
-    background: #00eaff;
+    margin-left: 10px;
     border: none;
-    font-weight: bold;
+    border-radius: 6px;
     cursor: pointer;
+    background: #ffffff;
+    font-weight: bold;
 }
 
 button:hover {
-    background: #00c8d8;
+    opacity: 0.8;
 }
