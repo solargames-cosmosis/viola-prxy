@@ -7,7 +7,8 @@ const app = express();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-app.use(express.static("public"));
+// Serve static files from main folder
+app.use(express.static(__dirname));
 
 app.get("/browser", async (req, res) => {
     let url = req.query.url;
