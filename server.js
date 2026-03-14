@@ -7,26 +7,28 @@ const app = express();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
+app.use(express.static("public"));
 
-app.get("/proxy", async (req, res) => {
-  const url = req.query.url;
+app.get("/browser", async (req, res) => {
+    let url = req.query.url;
 
-  if (!url) return res.send("No URL");
+    if (!url) return res.send("No URL");
 
-  try {
-    const response = await fetch(url);
-    const text = await response.text();
-    res.send(text);
-  } catch {
-    res.send("Proxy error");
-  }
+    try {
+        url = Buffer.from(url, "base64").toString("utf8");
+
+        const response = await fetch(url);
+        const html = await response.text();
+
+        res.send(html);
+
+    } catch {
+        res.send("Error loading page");
+    }
 });
 
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
-  console.log("Viola running on port " + PORT);
+    console.log("Viola running on port " + PORT);
 });
